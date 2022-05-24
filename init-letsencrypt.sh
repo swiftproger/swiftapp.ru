@@ -5,7 +5,7 @@ if ! [ -x "$(command -v docker-compose)" ]; then
   exit 1
 fi
 
-domains=(swiftapp.ru www.swiftapp.ru)
+domains=(swiftapp.ru www.swiftapp.ru, api.swiftapp.ru)
 rsa_key_size=4096
 data_path="./data/certbot"
 email="swiftapp@gmail.ru" # Adding a valid address is strongly recommended
