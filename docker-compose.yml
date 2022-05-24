@@ -14,7 +14,6 @@ services:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
       - ./public:/usr/share/nginx/html
-      - static_data:/var/www/html/static
     ports:
       - "80:80"
       - "443:443"
