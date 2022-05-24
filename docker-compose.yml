@@ -1,6 +1,11 @@
 version: '3'
 
 services:
+  flask:
+    build: ./app
+    command: sh -c "gunicorn --bind 0.0.0.0:8000 app.app:create_app"
+    expose:
+      - 8000
   nginx:
     image: nginx:1.17
     restart: unless-stopped
@@ -9,6 +14,7 @@ services:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
       - ./public:/usr/share/nginx/html
+      - static_data:/var/www/html/static
     ports:
       - "80:80"
       - "443:443"
