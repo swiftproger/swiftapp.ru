@@ -8,7 +8,6 @@ services:
       - 8000
     volumes:
       - ./app:/app
-      - static_data:/app/static
   nginx:
     image: nginx:1.17
     restart: unless-stopped
