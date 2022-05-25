@@ -16,7 +16,7 @@ services:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
 #      - ./public:/usr/share/nginx/html
-      - ./app:/usr/share/nginx/html
+      - ./app:/etc/nginx/app
     ports:
       - "80:80"
       - "443:443"
