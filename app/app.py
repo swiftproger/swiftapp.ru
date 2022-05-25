@@ -2,7 +2,7 @@ from flask import Flask, Response
 
 app = Flask(__name__)
 
-@application.route("/")
+@app.route("/")
 def index():
     return "swiftapp"
 
