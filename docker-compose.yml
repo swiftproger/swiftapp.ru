@@ -3,20 +3,22 @@ version: '3'
 services:
   flask:
     build: ./app
-    command: sh -c "gunicorn -b app"
+    command: sh -c "gunicorn -b 0.0.0.0:8000 app"
     expose:
       - 8000
     volumes:
       - ./app:/app
   nginx:
     image: nginx:1.17
+    depends_on:
+      - flask
     restart: unless-stopped
     volumes:
       - ./data/nginx:/etc/nginx/conf.d
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
 #      - ./public:/usr/share/nginx/html
-      - ./app:/etc/nginx/app
+#      - ./app:/etc/nginx/app
     ports:
       - "80:80"
       - "443:443"
