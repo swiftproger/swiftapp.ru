@@ -1,6 +1,8 @@
 FROM python:3.10
 
-WORKDIR /app
+RUN mkdir -p /usr/src/app/
+WORKDIR /usr/src/app/
+COPY . /usr/src/app/
 
 COPY . .
 
