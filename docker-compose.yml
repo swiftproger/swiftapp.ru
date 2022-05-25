@@ -15,7 +15,7 @@ services:
       - ./data/nginx:/etc/nginx/conf.d
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
-      - ./public:/usr/share/nginx/html
+#      - ./public:/usr/share/nginx/html
     ports:
       - "80:80"
       - "443:443"
