@@ -3,9 +3,9 @@ version: '3'
 services:
   flask:
     build: ./app
-    command: sh -c "gunicorn --bind 0.0.0.0:8000 app.app:create_app"
+    command: sh -c "gunicorn -b 0.0.0.0:80 app.app"
     expose:
-      - 8000
+      - 80
   nginx:
     image: nginx:1.17
     restart: unless-stopped
