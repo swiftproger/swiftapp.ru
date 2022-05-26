@@ -3,7 +3,7 @@ version: '3'
 services:
   flask:
     build: ./app
-    command: sh -c "gunicorn --bind 0.0.0.0:80 --chdir /app wsgi:app"
+    command: sh -c "gunicorn -w 4 --bind 0.0.0.0:80 --chdir /app wsgi:app"
     expose:
       - 80
     volumes:
