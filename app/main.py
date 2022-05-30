@@ -11,10 +11,24 @@ app.url_map.default_subdomain = "www"
 #    return "<h1 style='color:blue'>Hello!!!</h1>"
 
 
-@app.route('/', subdomain='<string:subdomain>', methods=['GET', 'POST'])
-def handler(subdomain):
+@app.route("/", subdomain="static")
+def static_index():
+    """Flask supports static subdomains
+    This is available at static.your-domain.tld"""
+    return "static.your-domain.tld"
 
-   return f"{subdomain}.swiftapp.ru!"
+
+@app.route("/dynamic", subdomain="<username>")
+def username_index(username):
+    """Dynamic subdomains are also supported
+    Try going to user1.your-domain.tld/dynamic"""
+    return username + ".your-domain.tld"
+
+
+# @app.route('/', subdomain='<string:subdomain>', methods=['GET', 'POST'])
+# def handler(subdomain):
+
+   # return f"{subdomain}.swiftapp.ru!!"
 
 
 if __name__ == "__main__":
