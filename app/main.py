@@ -11,7 +11,7 @@ app.url_map.default_subdomain = "www"
 #    return "<h1 style='color:blue'>Hello!!!</h1>"
 
 
-@app.route('/', subdomain='<subdomain>', methods=['GET', 'POST'])
+@app.route('/', subdomain='<string:subdomain>', methods=['GET', 'POST'])
 def handler(subdomain):
 
    return f"{subdomain}.swiftapp.ru!"
