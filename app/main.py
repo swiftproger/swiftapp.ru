@@ -8,7 +8,7 @@ app.url_map.default_subdomain = "www"
 
 @app.route("/start")
 def hello():
-   return "<h1 style='color:blue'>Hello!!</h1>"
+   return "<h1 style='color:blue'>Hello!!!</h1>"
 
 
 @app.route('/s', subdomain='<subdomain>', methods=['GET', 'POST'])
