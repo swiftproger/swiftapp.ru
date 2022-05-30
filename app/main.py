@@ -4,7 +4,7 @@ app = Flask(__name__, subdomain_matching=True)
 # app = Flask(__name__)
 
 app.config['SERVER_NAME'] = '*.swiftapp.ru'
-app.url_map.default_subdomain = "www"
+# app.url_map.default_subdomain = "www"
 
 
 @app.route("/")
