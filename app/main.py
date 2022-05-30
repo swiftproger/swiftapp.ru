@@ -2,16 +2,18 @@ from flask import Flask
 
 app = Flask(__name__, subdomain_matching=True)
 
-app.config['SERVER_NAME'] = 'swiftapp.ru:80'
-app.url_map.default_subdomain = "www"
+app.config['SERVER_NAME'] = 'swiftapp.ru'
+# app.url_map.default_subdomain = "www"
+
 
 @app.route("/")
 def index():
     return "example.com"
 
+
 @app.route("/", subdomain="api")
 def egg_index():
-    return "eggs.example.com"
+    return "api.example.com"
 
 
 
