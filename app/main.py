@@ -11,10 +11,10 @@ app = Flask(__name__)
 def index():
     return "example.com q"
 
-#
-# @app.route("/", subdomain="api")
-# def egg_index():
-#     return "api.example.com"
+
+@app.route("/", subdomain="api")
+def egg_index():
+    return "api.example.com"
 
 
 
