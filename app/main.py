@@ -10,7 +10,7 @@ def hello():
 
 @app.route('/', subdomain='<subdomain>')
 def handler(subdomain):
-   return f"{subdomain}.swiftapp.ru"
+   return f"{subdomain}.swiftapp.ru!"
 
 
 if __name__ == "__main__":
