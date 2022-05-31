@@ -1,15 +1,18 @@
 from flask import Flask
 from flask import Blueprint
 
-app = Flask(__name__)
+app = Flask(__name__, subdomain_matching=True)
 app.config['SERVER_NAME'] = 'swiftapp.ru'
+
 
 @app.route('/')
 def hello_world():
     return 'Hello World!'
 
+
 # Blueprint declaration
 bp = Blueprint('subdomain', __name__, subdomain="<user>")
+
 
 # Add a route to the blueprint
 @bp.route("/")
