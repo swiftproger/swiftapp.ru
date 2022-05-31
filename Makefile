@@ -1,5 +1,5 @@
 start:
-	docker-compose build
+	docker-compose down
 	git pull
 	docker-compose build
-	docker-compose up
+	docker-compose up -d
