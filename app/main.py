@@ -1,10 +1,10 @@
 from flask import Flask
 
-app = Flask(__name__, subdomain_matching=True)
-# app = Flask(__name__)
+# app = Flask(__name__, subdomain_matching=True)
+app = Flask(__name__)
 
-app.config['SERVER_NAME'] = '*.swiftapp.ru'
-app.url_map.default_subdomain = "www"
+# app.config['SERVER_NAME'] = '*.swiftapp.ru'
+# app.url_map.default_subdomain = "www"
 
 
 @app.route("/")
@@ -16,7 +16,7 @@ def user(id):
     return f"{id}.example.com"
 
 
-@app.route("/d", subdomain="api")
+@app.route("/dos", subdomain="api")
 def egg_index():
     return "api.example.com"
 
