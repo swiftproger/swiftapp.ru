@@ -9,7 +9,7 @@ app.url_map.default_subdomain = "www"
 
 @app.route("/")
 def index():
-    return "swiftapp.ru"
+    return "swiftapp.ru !!!"
 
 @app.route("/user/<int:id>")
 def user(id):
