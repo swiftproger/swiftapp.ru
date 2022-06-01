@@ -18,10 +18,7 @@ def user(id):
 
 @app.route("/dos", subdomain="api")
 def egg_index():
-    return "api.example.com"
-
-
-
+    return "api.example.com РАБОТАЙ!!!!!"
 
 if __name__ == "__main__":
    app.run(host='0.0.0.0')
