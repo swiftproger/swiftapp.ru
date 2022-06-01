@@ -1,26 +1,23 @@
 from flask import Flask
+from flask import Blueprint
 
-app = Flask(__name__, subdomain_matching=True)
-# app = Flask(__name__)
+app = Flask(__name__)
+app.config['SERVER_NAME'] = 'swiftapp.ru'
 
-app.config['SERVER_NAME'] = '*.swiftapp.ru'
-app.url_map.default_subdomain = "www"
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
 
+# Blueprint declaration
+bp = Blueprint('subdomain', __name__, subdomain="<user>")
 
-@app.route("/")
-def index():
-    return "swiftapp.ru !"
+# Add a route to the blueprint
+@bp.route("/")
+def home(user):
+    return 'Welcome to your subdomain, {}'.format(user)
 
+# Register the blueprint into the application
+app.register_blueprint(bp)
 
-@app.route("/user/<int:id>")
-def user(id):
-    return f"{id}.example.com"
-
-
-@app.route("/dos", subdomain="api")
-def egg_index():
-    return "api.example.com"
-
-
-if __name__ == "__main__":
-   app.run()
+if __name__ == '__main__':
+    app.run(debug=True)
