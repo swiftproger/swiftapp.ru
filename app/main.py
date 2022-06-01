@@ -11,14 +11,14 @@ app = Flask(__name__)
 def index():
     return "swiftapp.ru !!!"
 
-@app.route("/user/<int:id>")
-def user(id):
-    return f"{id}.example.com"
-
-
-@app.route("/dos", subdomain="api")
-def egg_index():
-    return "api.example.com РАБОТАЙ!!!!!"
+# @app.route("/user/<int:id>")
+# def user(id):
+#     return f"{id}.example.com"
+#
+#
+# @app.route("/dos", subdomain="api")
+# def egg_index():
+#     return "api.example.com РАБОТАЙ!!!!!"
 
 if __name__ == "__main__":
    app.run()
